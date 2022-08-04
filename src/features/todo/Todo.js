@@ -35,15 +35,22 @@ export const Todo = () => {
       />
       <button onClick={handleSubmit}>Submit</button>
       {todo?.map((item, idx) => (
-        <div style={{ marginTop: "5px" }}>
+        <div style={{ marginTop: "10px" }}>
           {item.completed ? (
-            <span>
+            <span style={{ marginRight: "5px" }}>
               <s>{item.title}</s>
             </span>
           ) : (
-            <span key={idx}>{item.title}</span>
+            <span key={idx} style={{ marginRight: "5px" }}>
+              {item.title}
+            </span>
           )}
-          <button onClick={() => handleDone(idx)}>Done</button>
+          <button
+            onClick={() => handleDone(idx)}
+            style={{ marginRight: "5px" }}
+          >
+            Done
+          </button>
           <button onClick={() => handleDelete(idx)}>Delete</button>
         </div>
       ))}
